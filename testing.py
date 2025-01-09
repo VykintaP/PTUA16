@@ -178,3 +178,23 @@ print(filter_all_or_nothing_people(users))
 print(filter_underaged_owners(users))
 
 
+# You are given a dictionary called "audi".
+
+# Write a function "get_dict_values" which:
+# - Takes a dictionary as an argument and returns all of its values as a list.
+
+audi = {
+  "make": 'audi',
+  "model": 'A6',
+  "year": 2005,
+  "color": 'white',
+}
+
+
+
+def get_dict_values (list):
+    values_list = list.values()
+    return (values_list)
+
+print(get_dict_values(audi))
+

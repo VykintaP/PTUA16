@@ -5,19 +5,10 @@
 
 
 def sort_employees_by_salary(employees):
-
-    return sorted (employees, key=lambda  emp: emp ['salary'], reverse =- True)
+    return sorted(employees, key=lambda emp: emp['salary'], reverse=- True)
 
     for emp in employees:
         print(emp['salary'])
-
-
-
-
-
-
-
-
 
 
 employees = [

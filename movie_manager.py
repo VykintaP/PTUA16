@@ -127,3 +127,92 @@ if __name__ == "__main__":
 
 
 
+# You are given a list called "users".
+
+# Implement the following two functions:
+
+# 1. function "filter_all_or_nothing_people" - takes the "users" list as an argument and
+# for the given list returns a list of users who either have no pets at all or have both a dog and a cat.
+
+
+# 2. function "filter_underaged_owners" - takes the "users" list as an argument and
+# for the given list returns a list of users who are not yet of legal age but already have at least one pet.
+
+users = [
+    {'id': '1', 'name': 'John Smith', 'age': 17, 'hasDog': True, 'hasCat': True}, #filter
+    {'id': '2', 'name': 'Ann Smith', 'age': 24, 'hasDog': True, 'hasCat': False},
+    {'id': '3', 'name': 'Tom Jones', 'age': 63, 'hasDog': True, 'hasCat': True}, #filter
+    {'id': '4', 'name': 'Rose Peterson', 'age': 20, 'hasDog': True, 'hasCat': False},
+    {'id': '5', 'name': 'Alex John', 'age': 25, 'hasDog': False, 'hasCat': False}, #filter
+    {'id': '6', 'name': 'Ronald Jones', 'age': 31, 'hasDog': False, 'hasCat': True},
+    {'id': '7', 'name': 'Elton Smith', 'age': 16, 'hasDog': True, 'hasCat': False},
+    {'id': '8', 'name': 'Simon Peterson', 'age': 32, 'hasDog': False, 'hasCat': True},
+    {'id': '9', 'name': 'Daniel Cane', 'age': 15, 'hasDog': False, 'hasCat': False}, #filter
+]
+
+def filter_all_or_nothing_people (list_users:list) -> list:
+    list_pet_status = []
+    names = []
+    for user in list_users:
+        if (user["hasDog"] == True and user["hasCat"] == True) or (user["hasDog"] == False and user["hasCat"] == False):
+            list_pet_status.append(user)
+    for user2 in list_pet_status:
+         names.append(user2["name"])
+
+    return  print("neturi arba turi abu gyvunus:", names)
+
+def filter_underaged_owners (list_users) -> list:
+    list_legal_age =[]
+    names = []
+    for user in list_users:
+        if user["age"] < 18 and (user["hasDog"] == True or user["hasCat"] == True):
+            list_legal_age.append(user)
+    for user3 in list_legal_age:
+         names.append(user3["name"])
+
+    return  print("nera legalaus amziaus:", names)
+    return list_legal_age
+
+
+
+
+
+filter_all_or_nothing_people (users)
+filter_underaged_owners (users)
+
+
+# Create a Dog class with the following attributes and methods:
+
+# Attributes:
+# - name (string)
+# - breed (string)
+# - age (integer)
+
+# Methods:
+# - is_old() - if the dog is older than 12 years then returns True, otherwise - False.
+
+# Create two instances of the Dog class, make one young and one old, call the is_old
+# method on both of them and print the results
+
+class Dog:
+
+    def __init__(self, name:str, breed:str, age:int):
+        self.name = name
+        self.breed = breed
+        self.age = age
+
+
+    def is_old(self) -> bool:
+
+        if self.age > 12:
+            return True
+        else:
+            return False
+
+
+dog1 = Dog (name = "Kudlius", breed = "Kolis", age = 13)
+dog2 = Dog (name = "Pupa", breed = "Taksas", age = 7)
+
+
+print(dog1.name, "is old?", dog1.is_old())
+print(dog2.name, "is old?", dog2.is_old())
